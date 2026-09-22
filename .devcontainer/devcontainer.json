@@ -1,0 +1,6 @@
+{
+  "name": "Spatial Agent IDE — Electron",
+  "build": { "dockerfile": "../Containerfile", "context": ".." },
+  "remoteUser": "root",
+  "customizations": { "vscode": { "extensions": ["dbaeumer.vscode-eslint"] } }
+}

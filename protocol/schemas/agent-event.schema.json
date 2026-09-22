@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SpatialAgentEvent v1 envelope draft",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "sequence",
+    "projectId",
+    "sessionId",
+    "provider",
+    "timestamp",
+    "type",
+    "payload"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "projectId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sessionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "type": {
+      "enum": [
+        "SESSION_STARTED",
+        "SESSION_RESUMED",
+        "THINKING",
+        "MESSAGE",
+        "PLAN_CREATED",
+        "PLAN_UPDATED",
+        "FILE_READ",
+        "FILE_CREATED",
+        "FILE_EDITED",
+        "FILE_DELETED",
+        "DIFF_AVAILABLE",
+        "COMMAND_STARTED",
+        "COMMAND_OUTPUT",
+        "COMMAND_COMPLETED",
+        "TEST_STARTED",
+        "TEST_RESULT",
+        "TOOL_STARTED",
+        "TOOL_COMPLETED",
+        "SUBAGENT_STARTED",
+        "SUBAGENT_COMPLETED",
+        "APPROVAL_REQUESTED",
+        "APPROVAL_RESOLVED",
+        "GIT_CHANGED",
+        "TASK_COMPLETED",
+        "ERROR",
+        "SESSION_COMPLETED"
+      ]
+    },
+    "payload": {
+      "type": "object"
+    }
+  }
+}

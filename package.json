@@ -1,0 +1,52 @@
+{
+  "name": "spatial-agent-ide",
+  "version": "0.5.0",
+  "private": true,
+  "description": "A spatial shell for AI-assisted software development",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "postinstall": "node scripts/fix-node-pty.cjs",
+    "dev": "concurrently -k \"vite --host 127.0.0.1\" \"tsc -p electron/tsconfig.json --watch --preserveWatchOutput\" \"wait-on tcp:5173 dist-electron/main.js && cross-env VITE_DEV_SERVER_URL=http://127.0.0.1:5173 electron .\"",
+    "build": "tsc -b && vite build && tsc -p electron/tsconfig.json",
+    "pretest": "node -e \"require('node:fs').mkdirSync('.tmp',{recursive:true})\"",
+    "test": "cross-env TMPDIR=./.tmp vitest run",
+    "check": "npm run test && npm run build",
+    "dist:mac": "npm run build && electron-builder --mac",
+    "preview": "vite --host 127.0.0.1"
+  },
+  "dependencies": {
+    "node-pty": "^1.1.0",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "@types/three": "^0.180.0",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.0.0",
+    "electron": "^39.8.10",
+    "electron-builder": "^26.0.12",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7",
+    "vitest": "^4.1.11",
+    "wait-on": "^8.0.4"
+  },
+  "build": {
+    "appId": "com.spatialagent.ide",
+    "productName": "Spatial Agent IDE",
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "dmg": {
+      "title": "Spatial Agent IDE"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+archive/
+node_modules/
+dist/
+dist-electron/
+.npm-cache/
+.electron-cache/
+.tmp/
+.git/
+.DS_Store
