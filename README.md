@@ -2,6 +2,9 @@
 
 A functional Electron and Three.js proof of concept for a spatial shell for AI-assisted software development. It runs entirely on macOS without XREAL hardware or live agent credentials.
 
+> [!WARNING]
+> **Experimental software.** This project is provided as-is, without warranties or guarantees of any kind. You assume full responsibility for installing, configuring, and using it, including any commands executed, files changed, data lost, or effects on connected devices and services.
+
 ## Demo
 
 [![Spatial Agent IDE workspace](media/screenshots/spatial-workspace.png)](media/xr-agents-demo.mov)
