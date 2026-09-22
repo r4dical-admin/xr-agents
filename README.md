@@ -6,7 +6,7 @@ A functional Electron and Three.js proof of concept for a spatial shell for AI-a
 
 [![Spatial Agent IDE workspace](media/screenshots/spatial-workspace.png)](media/xr-agents-demo.mov)
 
-Click the image to watch the [22-second head-tracked workspace demo](media/xr-agents-demo.mov). Local paths, terminal identity, project names, and chat titles in the source recording are covered in this public copy.
+Click the image to watch the [22-second head-tracked workspace demo](media/xr-agents-demo.mov).
 
 | Connect Codex | Spatial workspace |
 | --- | --- |
