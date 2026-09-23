@@ -15,6 +15,17 @@ Click the image to watch the [23-second spatial workspace demo](media/xr-agents-
 | --- | --- |
 | ![One-click Connect Codex screen](media/screenshots/connect-codex.png) | ![Spatial workspace with agent orb and activity surfaces](media/screenshots/spatial-workspace.png) |
 
+## Download for macOS
+
+[Download Spatial Agent IDE 0.5.0 for Apple Silicon](https://github.com/r4dical-admin/xr-agents/releases/download/v0.5.0/Spatial-Agent-IDE-0.5.0-arm64.dmg)
+
+1. Download and open the DMG.
+2. Drag **Spatial Agent IDE** into **Applications**.
+3. On first launch, Control-click the app and choose **Open**, then confirm **Open**. The current experimental build is unsigned and not notarized, so macOS may otherwise block its first launch.
+4. Click **Connect Codex**. The app finds the Codex CLI bundled with Codex.app or ChatGPT.app and uses the existing local Codex login.
+
+This build requires an Apple Silicon Mac. It does not require XREAL hardware; right-drag simulates head movement on the Mac. XREAL sensor support remains experimental.
+
 ## What is implemented
 
 - One-click Codex App Server connection with live task creation, resume, prompting, steering, streaming and interruption, plus three provider-neutral mock sessions.
