@@ -12,6 +12,7 @@
     "test": "cross-env TMPDIR=./.tmp vitest run",
     "check": "npm run test && npm run build",
     "dist:mac": "npm run build && electron-builder --mac",
+    "demo:capture": "npm run build && electron tools/capture-polished-demo.cjs && swift tools/encode-frame-sequence.swift .tmp/polished-demo-frames media/xr-agents-demo.mov 15",
     "preview": "vite --host 127.0.0.1"
   },
   "dependencies": {

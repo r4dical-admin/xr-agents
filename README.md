@@ -9,7 +9,7 @@ A functional Electron and Three.js proof of concept for a spatial shell for AI-a
 
 [![Spatial Agent IDE workspace](media/screenshots/spatial-workspace.png)](media/xr-agents-demo.mov)
 
-Click the image to watch the [22-second head-tracked workspace demo](media/xr-agents-demo.mov).
+Click the image to watch the [23-second spatial workspace demo](media/xr-agents-demo.mov). It uses a clean synthetic Codex session to show connection, project navigation, streamed plans and file activity, approvals, terminal output, token telemetry, and task completion.
 
 | Connect Codex | Spatial workspace |
 | --- | --- |
@@ -69,6 +69,14 @@ The mock clock pauses indefinitely at the approval. Denying uses the simulated i
 npm run check
 npm run dist:mac
 ```
+
+To reproduce the demo recording on macOS:
+
+```bash
+npm run demo:capture
+```
+
+The capture command builds the app, records a deterministic 1920×1080 frame sequence through the live workspace renderer, and encodes `media/xr-agents-demo.mov` with AVFoundation.
 
 `npm run check` runs behavioral tests and creates production renderer/Electron builds. `npm run dist:mac` creates unsigned macOS `.dmg` and `.zip` artifacts in `dist/`. Public distribution will require an Apple Developer ID certificate and notarization.
 
