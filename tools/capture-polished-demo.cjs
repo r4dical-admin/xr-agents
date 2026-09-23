@@ -4,6 +4,7 @@ const path = require('node:path');
 
 const root = path.join(__dirname, '..');
 const frames = path.join(root, '.tmp', 'polished-demo-frames');
+const fullUiScreenshot = path.join(root, 'media', 'screenshots', 'full-ui.png');
 const fps = 15;
 const seconds = 23;
 const totalFrames = fps * seconds;
@@ -173,7 +174,18 @@ app.whenReady().then(async () => {
     fs.writeFileSync(path.join(frames, `frame-${String(frame).padStart(4, '0')}.jpg`), image.toJPEG(88));
   }
 
-  console.log(`${frames}\n${totalFrames} frames at ${fps} fps`);
+  await runJs(window, `(() => {
+    const overview = document.createElement('style');
+    overview.id = 'full-ui-overview';
+    overview.textContent = '#workspace.live-workspace { transform: scale(.49) !important; }';
+    document.head.append(overview);
+    return true;
+  })()`);
+  await wait(500);
+  const overview = await window.webContents.capturePage();
+  fs.writeFileSync(fullUiScreenshot, overview.toPNG());
+
+  console.log(`${frames}\n${totalFrames} frames at ${fps} fps\n${fullUiScreenshot}`);
   window.destroy();
   app.quit();
 });

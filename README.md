@@ -15,6 +15,10 @@ Click the image to watch the [23-second spatial workspace demo](media/xr-agents-
 | --- | --- |
 | ![One-click Connect Codex screen](media/screenshots/connect-codex.png) | ![Spatial workspace with agent orb and activity surfaces](media/screenshots/spatial-workspace.png) |
 
+### Full workspace overview
+
+[![Complete Spatial Agent IDE interface with projects, conversation, telemetry and workspace tools](media/screenshots/full-ui.png)](media/screenshots/full-ui.png)
+
 ## Download for macOS
 
 [Download Spatial Agent IDE 0.5.0 for Apple Silicon](https://github.com/r4dical-admin/xr-agents/releases/download/v0.5.0/Spatial-Agent-IDE-0.5.0-arm64.dmg)
